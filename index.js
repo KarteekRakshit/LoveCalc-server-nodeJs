@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/test', (req, res) => res.send('Hello World!'))
 app.post('/calculate', (req, res) => {
     console.log(req.body.user, req.body.crush)
