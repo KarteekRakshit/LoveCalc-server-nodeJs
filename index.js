@@ -2,7 +2,7 @@ const express = require('express')
 var bodyParser = require('body-parser')
 
 const app = express()
-const port = 3000;
+const port = process.env.PORT || 3000;;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -47,7 +47,6 @@ app.post('/calculate', (req, res) => {
         let val = Math.abs(loveTotal / 100)
         let fval = val - Math.floor(val)
         console.log(3, val, fval)
-
         res.send({
             user: req.body.user,
             crush: req.body.crush,
@@ -55,7 +54,6 @@ app.post('/calculate', (req, res) => {
         })
     } else {
         console.log(4)
-
         res.send({
             user: req.body.user,
             crush: req.body.crush,
